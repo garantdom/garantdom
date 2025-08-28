@@ -2,86 +2,134 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Техническое обслуживание домофонов</title>
+  <title>Техобслуживание - ГАРАНТ ДОМОФОН</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background-color: #5a1f2c;
+      color: #ffffff;
     }
     .container {
-      max-width: 800px;
-      margin: 0 auto;
+      max-width: 600px;
+      margin: 30px auto;
       padding: 20px;
-    }
-    header {
-      background: #2c3e50;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
+      background-color: #6f2335;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
     h1 {
-      margin: 0;
-      font-size: 26px;
+      text-align: center;
+      border-bottom: 2px solid #a13f55;
+      padding-bottom: 10px;
     }
-    .content {
-      background: #fff;
-      margin-top: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .service-list {
+      list-style: none;
+      padding: 0;
     }
-    h2 {
-      color: #2c3e50;
-      margin-top: 0;
+    .service-list li {
+      margin: 10px 0;
+      padding: 8px;
+      background-color: #7f2b43;
+      border-radius: 4px;
     }
     .price {
-      font-size: 22px;
-      color: #e74c3c;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.4em;
       font-weight: bold;
-      margin: 15px 0;
+      color: #ffd700;
     }
-    .contacts {
+    .contact {
+      text-align: center;
       margin-top: 20px;
-      padding: 15px;
-      background: #ecf0f1;
-      border-radius: 8px;
+      font-size: 1.1em;
     }
-    .contacts p {
-      margin: 5px 0;
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch button {
+      background-color: #a13f55;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      font-size: 0.9em;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .lang-switch button:hover {
+      background-color: #bf5a70;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <h1>Компания "ГАРАНТ ДОМФОН"</h1>
-      <p>Техническое обслуживание и ремонт домофонных систем</p>
-    </header>
-
-    <div class="content">
-      <h2>Условия обслуживания</h2>
-      <ul>
-        <li>Регулярная проверка работы домофона и двери</li>
-        <li>Бесплатный ремонт квартирных трубок</li>
-        <li>Настройка и прошивка оборудования</li>
-        <li>Устранение неисправностей в течение 24 часов</li>
-      </ul>
-
-      <div class="price">
-        Стоимость обслуживания: 10 000 сум в месяц с квартиры
-      </div>
-
-      <div class="contacts">
-        <h3>Контакты</h3>
-        <p>📞 Телефон: +998 (90) 123-45-67</p>
-        <p>✉️ Email: garant@domofon.uz</p>
-      </div>
+  <div class="lang-switch">
+    <button id="langBtn" onclick="toggleLang()">UZ</button>
+  </div>
+  <div class="container" id="content">
+    <h1>Условия технического обслуживания</h1>
+    <ul class="service-list">
+      <li>Полное техническое обслуживание домофонных систем</li>
+      <li>Обслуживание и ремонт дверных доводчиков</li>
+      <li>Обслуживание электромагнитного замка</li>
+      <li>Бесплатный ремонт переговорных устройств (трубок)</li>
+      <li>На время ремонта — предоставление рабочей трубки</li>
+      <li>Если абонентская трубка не подлежит ремонту — клиенту остаётся заменяющая рабочая трубка</li>
+    </ul>
+    <div class="price">Стоимость: 10 000 сум/месяц с квартиры</div>
+    <div class="contact">
+      По вопросам технического обслуживания обратитесь в компанию<br>
+      <strong>«ГАРАНТ ДОМОФОН»</strong>
     </div>
   </div>
+
+  <script>
+    let currentLang = 'ru';
+    function toggleLang() {
+      const content = document.getElementById('content');
+      const langBtn = document.getElementById('langBtn');
+      if (currentLang === 'ru') {
+        content.innerHTML = `
+          <h1>Texnik xizmat ko‘rsatish shartlari</h1>
+          <ul class="service-list">
+            <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish</li>
+            <li>Eshik dovedchiklarini ta’mirlash va xizmat ko‘rsatish</li>
+            <li>Elektromagnit qulfga xizmat ko‘rsatish</li>
+            <li>Abonent trubkalarini bepul ta’mirlash</li>
+            <li>Ta’mirlash vaqtida vaqtinchalik ishlaydigan trubka beriladi</li>
+            <li>Agar abonent trubkasi ta’mirlashga yaroqsiz bo‘lsa — mijozga o‘rnini bosuvchi trubka qoldiriladi</li>
+          </ul>
+          <div class="price">Narxi: 10 000 so‘m/oy har bir xonadondan</div>
+          <div class="contact">
+            Texnik xizmat ko‘rsatish bo‘yicha murojaat qiling:<br>
+            <strong>«GARANT DOMOFON»</strong>
+          </div>
+        `;
+        currentLang = 'uz';
+        langBtn.textContent = 'РУС';
+      } else {
+        content.innerHTML = `
+          <h1>Условия технического обслуживания</h1>
+          <ul class="service-list">
+            <li>Полное техническое обслуживание домофонных систем</li>
+            <li>Обслуживание и ремонт дверных доводчиков</li>
+            <li>Обслуживание электромагнитного замка</li>
+            <li>Бесплатный ремонт переговорных устройств (трубок)</li>
+            <li>На время ремонта — предоставление рабочей трубки</li>
+            <li>Если абонентская трубка не подлежит ремонту — клиенту остаётся заменяющая рабочая трубка</li>
+          </ul>
+          <div class="price">Стоимость: 10 000 сум/месяц с квартиры</div>
+          <div class="contact">
+            По вопросам технического обслуживания обратитесь в компанию<br>
+            <strong>«ГАРАНТ ДОМОФОН»</strong>
+          </div>
+        `;
+        currentLang = 'ru';
+        langBtn.textContent = 'UZ';
+      }
+    }
+  </script>
 </body>
 </html>

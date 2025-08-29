@@ -2,140 +2,189 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8">
-  <title>GARANT DOMOFON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garant Domofon</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: white;
       margin: 0;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      font-family: "Arial", sans-serif;
+      background: linear-gradient(135deg, #ffffff, #f8e9ec, #fff); /* нежный фон */
     }
-    .container {
-      border: 8px solid #800020; /* тёмно-бордовый */
-      border-radius: 20px;
+
+    .frame {
+      border: 15px solid transparent;
+      border-image: linear-gradient(45deg, gold, #ffd700, #c9a300);
+      border-image-slice: 1;
+      box-shadow: 0 0 35px rgba(255, 215, 0, 0.8), inset 0 0 25px rgba(255, 255, 255, 0.2);
       padding: 30px;
-      max-width: 800px;
-      margin: 20px;
+      margin: 30px auto;
+      border-radius: 20px;
+      max-width: 900px;
+    }
+
+    .content {
+      background: linear-gradient(160deg, #600020, #800030);
+      padding: 40px;
+      border-radius: 15px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(128,0,32,0.6);
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
     }
+
     h1 {
-      color: goldenrod;
-      font-size: 40px;
-      margin-bottom: 20px;
+      font-size: 2.6rem;
+      margin-bottom: 15px;
+      color: gold; /* название золотое */
       text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
     }
+
     h2 {
-      color: #800020;
-      font-size: 24px;
-      margin-top: 20px;
+      margin-top: 25px;
+      font-size: 1.8rem;
+      color: white;
+      font-weight: bold;
+      border-bottom: 2px solid gold;
+      display: inline-block;
+      padding-bottom: 5px;
     }
-    p, li {
-      font-size: 18px;
-      color: #333;
+
+    p {
+      color: white;
+      font-size: 1.2rem;
       line-height: 1.6;
     }
+
     ul {
-      text-align: left;
+      list-style: none;
+      padding: 0;
       margin: 20px auto;
-      max-width: 700px;
+      max-width: 600px;
+      text-align: left;
     }
-    li::marker {
-      color: goldenrod;
-    }
-    .contacts {
-      margin-top: 30px;
-      font-size: 22px;
-      font-weight: bold;
-      color: #800020;
-    }
-    .contacts a {
-      color: goldenrod;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .lang-btns {
-      margin-bottom: 20px;
-    }
-    .lang-btns button {
-      background-color: #800020;
+
+    ul li {
+      font-size: 1.2rem;
       color: white;
-      border: 2px solid goldenrod;
-      border-radius: 10px;
-      padding: 8px 16px;
-      margin: 5px;
-      cursor: pointer;
       font-weight: bold;
+      margin: 10px 0;
+      padding-left: 35px;
+      position: relative;
     }
-    .lang-btns button:hover {
-      background-color: goldenrod;
-      color: #800020;
+
+    ul li::before {
+      content: "✔";
+      color: gold;
+      position: absolute;
+      left: 0;
+      font-size: 1.4rem;
+    }
+
+    .contacts {
+      margin-top: 40px;
+      font-size: 1.9rem;
+      font-weight: bold;
+      color: gold;
+      text-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    }
+
+    .contacts a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .lang-switch button {
+      background: gold;
+      border: none;
+      color: #600020;
+      font-weight: bold;
+      padding: 8px 15px;
+      margin-left: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .lang-switch button:hover {
+      background: #fff3b0;
+    }
+
+    .hidden {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="lang-btns">
-      <button onclick="setLang('uz')">UZ</button>
-      <button onclick="setLang('ru')">РУС</button>
-    </div>
 
-    <h1>GARANT DOMOFON</h1>
+  <div class="lang-switch">
+    <button onclick="setLang('uz')">УЗ</button>
+    <button onclick="setLang('ru')">РУС</button>
+  </div>
 
-    <div id="content">
-      <p>Kompaniya «GARANT DOMOFON» aholi uchun domofon tizimlarini texnik xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
+  <div class="frame">
+    <!-- Узбекский текст -->
+    <div id="uz" class="content">
+      <h1>Garant Domofon</h1>
+      <p>Kompaniya «GARANT DOMOFON» uylar aholisi bilan domofon tizimlarini texnik xizmat ko‘rsatish shartnomasini tuzishni taklif etadi.</p>
 
       <h2>TEXNIK XIZMAT KO‘RSATISH SHARTLARI</h2>
       <ul>
-        <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish.</li>
-        <li>Eshik dоvodchiklarini ta’mirlash va xizmat ko‘rsatish.</li>
-        <li>Elektromagnit qulfga xizmat ko‘rsatish.</li>
-        <li>Suhbat qurilmalari (trubkalar)ni bepul ta’mirlash.</li>
-        <li>Ta’mir vaqtida foydalanish uchun vaqtinchalik trubka beriladi.</li>
-        <li>Trubkani bepul almashtirish.</li>
+        <li>Domofon tizimlarining to‘liq texnik xizmat ko‘rsatilishi</li>
+        <li>Eshik prujinali yopuvchi ta’miri va xizmat ko‘rsatish</li>
+        <li>Elektromagnit qulfga xizmat ko‘rsatish</li>
+        <li>Telefon trubkalarini bepul ta’mirlash</li>
+        <li>Ta’mir vaqtida vaqtinchalik trubka beriladi</li>
+        <li>Trubkani bepul almashtirish</li>
       </ul>
+
+      <div class="contacts">
+        📞 97 407 75 56 | 93 093 75 55 <br>
+        📸 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a>
+      </div>
     </div>
 
-    <div class="contacts">
-      📞 97 407 75 56 | 93 093 75 55 <br>
-      📸 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a>
+    <!-- Русский текст -->
+    <div id="ru" class="content hidden">
+      <h1>Гарант Домофон</h1>
+      <p>Компания «ГАРАНТ ДОМОФОН» предлагает жителям подъезда заключить договор на обслуживание домофонных систем.</p>
+
+      <h2>УСЛОВИЯ ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ</h2>
+      <ul>
+        <li>Полное техническое обслуживание домофонных систем</li>
+        <li>Обслуживание и ремонт дверных доводчиков</li>
+        <li>Обслуживание электромагнитного замка</li>
+        <li>Бесплатный ремонт переговорных устройств (трубок)</li>
+        <li>На время ремонта предоставляется рабочая трубка</li>
+        <li>Бесплатная замена трубки</li>
+      </ul>
+
+      <div class="contacts">
+        📞 97 407 75 56 | 93 093 75 55 <br>
+        📸 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a>
+      </div>
     </div>
   </div>
 
   <script>
-    const content = document.getElementById("content");
-    const texts = {
-      uz: `
-        <p>Kompaniya «GARANT DOMOFON» aholi uchun domofon tizimlarini texnik xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
-        <h2>TEXNIK XIZMAT KO‘RSATISH SHARTLARI</h2>
-        <ul>
-          <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish.</li>
-          <li>Eshik dоvodchiklarini ta’mirlash va xizmat ko‘rsatish.</li>
-          <li>Elektromagnit qulfga xizmat ko‘rsatish.</li>
-          <li>Suhbat qurilmalari (trubkalar)ni bepul ta’mirlash.</li>
-          <li>Ta’mir vaqtida foydalanish uchun vaqtinchalik trubka beriladi.</li>
-          <li>Trubkani bepul almashtirish.</li>
-        </ul>
-      `,
-      ru: `
-        <p>Компания «ГАРАНТ ДОМОФОН» предлагает жителям подъезда заключить договор на обслуживание домофонных систем.</p>
-        <h2>УСЛОВИЯ ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ</h2>
-        <ul>
-          <li>Полное техническое обслуживание домофонных систем.</li>
-          <li>Обслуживание и ремонт дверных доводчиков.</li>
-          <li>Обслуживание электромагнитного замка.</li>
-          <li>Бесплатный ремонт переговорных устройств (трубок).</li>
-          <li>На время ремонта предоставляем рабочую трубку для комфортного пользования домофоном.</li>
-          <li>Бесплатная замена трубки.</li>
-        </ul>
-      `
-    };
     function setLang(lang) {
-      content.innerHTML = texts[lang];
+      document.getElementById("uz").classList.add("hidden");
+      document.getElementById("ru").classList.add("hidden");
+      document.getElementById(lang).classList.remove("hidden");
     }
+    // По умолчанию узбекский
+    setLang("uz");
   </script>
+
 </body>
 </html>

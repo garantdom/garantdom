@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       font-family: "Arial", sans-serif;
-      background: linear-gradient(135deg, #ffffff, #f8e9ec, #fff); /* нежный фон */
+      background: linear-gradient(135deg, #ffffff, #f8e9ec, #fff);
     }
 
     .frame {
@@ -34,7 +34,7 @@
     h1 {
       font-size: 2.6rem;
       margin-bottom: 15px;
-      color: gold; /* название золотое */
+      color: gold;
       text-transform: uppercase;
       text-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
     }
@@ -122,6 +122,68 @@
 
     .hidden {
       display: none;
+    }
+
+    /* 📱 Адаптация под мобильные устройства */
+    @media (max-width: 768px) {
+      .frame {
+        padding: 15px;
+        margin: 15px;
+        border-width: 10px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      p, ul li {
+        font-size: 1rem;
+      }
+
+      ul {
+        padding-left: 10px;
+      }
+
+      .contacts {
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+
+      .lang-switch {
+        top: 10px;
+        right: 10px;
+      }
+
+      .lang-switch button {
+        padding: 6px 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p, ul li {
+        font-size: 0.9rem;
+      }
+
+      .contacts {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>

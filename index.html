@@ -5,167 +5,136 @@
   <title>GARANT DOMOFON</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background: url("фон гарант.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: #fff;
-    }
-    .overlay {
-      background-color: rgba(128, 0, 32, 0.85);
-      min-height: 100vh;
-      padding: 20px;
-      box-sizing: border-box;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .container {
+      border: 8px solid #800020; /* тёмно-бордовый */
+      border-radius: 20px;
+      padding: 30px;
       max-width: 800px;
-      margin: auto;
-      background: #fff;
-      color: #400010;
-      padding: 20px 30px;
-      border-radius: 12px;
-      border: 3px solid #800020;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin: 20px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(128,0,32,0.6);
     }
     h1 {
-      text-align: center;
-      font-size: 36px;
-      color: #800020;
+      color: goldenrod;
+      font-size: 40px;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
     h2 {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 20px;
       color: #800020;
+      font-size: 24px;
+      margin-top: 20px;
+    }
+    p, li {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.6;
     }
     ul {
-      list-style: none;
-      padding: 0;
+      text-align: left;
+      margin: 20px auto;
+      max-width: 700px;
     }
-    ul li {
-      background: #f8f8f8;
-      margin: 8px 0;
-      padding: 10px 15px;
-      border-left: 5px solid #800020;
-      border-radius: 6px;
-    }
-    .price {
-      text-align: center;
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 25px;
-      color: #800020;
-      padding: 12px;
-      border: 2px dashed #800020;
-      border-radius: 8px;
-      background: #fff5f5;
+    li::marker {
+      color: goldenrod;
     }
     .contacts {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .contacts p {
-      margin: 5px 0;
-      font-size: 18px;
-    }
-    .lang-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #fff;
+      margin-top: 30px;
+      font-size: 22px;
+      font-weight: bold;
       color: #800020;
-      border: 2px solid #800020;
-      padding: 6px 14px;
-      border-radius: 8px;
+    }
+    .contacts a {
+      color: goldenrod;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .lang-btns {
+      margin-bottom: 20px;
+    }
+    .lang-btns button {
+      background-color: #800020;
+      color: white;
+      border: 2px solid goldenrod;
+      border-radius: 10px;
+      padding: 8px 16px;
+      margin: 5px;
       cursor: pointer;
       font-weight: bold;
     }
-    .lang-btn:hover {
-      background: #800020;
-      color: #fff;
+    .lang-btns button:hover {
+      background-color: goldenrod;
+      color: #800020;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <button class="lang-btn" onclick="toggleLang()">РУС</button>
-    <div class="container" id="content">
-      <!-- Контент по умолчанию на узбекском -->
-      <h1>GARANT DOMOFON</h1>
+  <div class="container">
+    <div class="lang-btns">
+      <button onclick="setLang('uz')">UZ</button>
+      <button onclick="setLang('ru')">РУС</button>
+    </div>
+
+    <h1>GARANT DOMOFON</h1>
+
+    <div id="content">
+      <p>Kompaniya «GARANT DOMOFON» aholi uchun domofon tizimlarini texnik xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
+
       <h2>TEXNIK XIZMAT KO‘RSATISH SHARTLARI</h2>
-      <p>Kompaniya «GARANT DOMOFON» uy-joy egalari uchun domofon tizimlariga xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
       <ul>
         <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish.</li>
-        <li>Eshik yopgichlarini ta’mirlash va xizmat ko‘rsatish.</li>
-        <li>Elektromagnit qulfga texnik xizmat ko‘rsatish.</li>
-        <li>Abonent trubkalarini bepul ta’mirlash.</li>
-        <li>Ta’mirlash vaqtida vaqtincha ishlaydigan trubka beriladi.</li>
-        <li>Bepul trubka almashtirish xizmati.</li>
+        <li>Eshik dоvodchiklarini ta’mirlash va xizmat ko‘rsatish.</li>
+        <li>Elektromagnit qulfga xizmat ko‘rsatish.</li>
+        <li>Suhbat qurilmalari (trubkalar)ni bepul ta’mirlash.</li>
+        <li>Ta’mir vaqtida foydalanish uchun vaqtinchalik trubka beriladi.</li>
+        <li>Trubkani bepul almashtirish.</li>
       </ul>
-      <div class="price">Narxi: 10 000 so‘m</div>
-      <div class="contacts">
-        <p>📞 +998 97 407 75 56</p>
-        <p>📞 +998 93 093 75 55</p>
-        <p>📷 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a></p>
-      </div>
+    </div>
+
+    <div class="contacts">
+      📞 97 407 75 56 | 93 093 75 55 <br>
+      📸 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a>
     </div>
   </div>
 
   <script>
-    let currentLang = "uz";
-
-    function toggleLang() {
-      const content = document.getElementById("content");
-      const btn = document.querySelector(".lang-btn");
-
-      if (currentLang === "uz") {
-        // Переключение на русский
-        content.innerHTML = `
-          <h1>ГАРАНТ ДОМОФОН</h1>
-          <h2>УСЛОВИЯ ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ</h2>
-          <p>Компания «ГАРАНТ ДОМОФОН» предлагает жителям подъезда заключить договор на обслуживание домофонных систем.</p>
-          <ul>
-            <li>Полное техническое обслуживание домофонных систем.</li>
-            <li>Обслуживание и ремонт дверных доводчиков.</li>
-            <li>Обслуживание электромагнитного замка.</li>
-            <li>Бесплатный ремонт переговорных устройств (трубок).</li>
-            <li>На время ремонта предоставляется рабочая трубка для комфортного пользования домофоном.</li>
-            <li>Бесплатная замена трубки.</li>
-          </ul>
-          <div class="price">Цена: 10 000 сум</div>
-          <div class="contacts">
-            <p>📞 +998 97 407 75 56</p>
-            <p>📞 +998 93 093 75 55</p>
-            <p>📷 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a></p>
-          </div>
-        `;
-        btn.textContent = "UZ";
-        currentLang = "ru";
-      } else {
-        // Переключение обратно на узбекский
-        content.innerHTML = `
-          <h1>GARANT DOMOFON</h1>
-          <h2>TEXNIK XIZMAT KO‘RSATISH SHARTLARI</h2>
-          <p>Kompaniya «GARANT DOMOFON» uy-joy egalari uchun domofon tizimlariga xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
-          <ul>
-            <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish.</li>
-            <li>Eshik yopgichlarini ta’mirlash va xizmat ko‘rsatish.</li>
-            <li>Elektromagnit qulfga texnik xizmat ko‘rsatish.</li>
-            <li>Abonent trubkalarini bepul ta’mirlash.</li>
-            <li>Ta’mirlash vaqtida vaqtincha ishlaydigan trubka beriladi.</li>
-            <li>Bepul trubka almashtirish xizmati.</li>
-          </ul>
-          <div class="price">Narxi: 10 000 so‘m</div>
-          <div class="contacts">
-            <p>📞 +998 97 407 75 56</p>
-            <p>📞 +998 93 093 75 55</p>
-            <p>📷 Instagram: <a href="https://instagram.com/garant_domofon.uz" target="_blank">@garant_domofon.uz</a></p>
-          </div>
-        `;
-        btn.textContent = "РУС";
-        currentLang = "uz";
-      }
+    const content = document.getElementById("content");
+    const texts = {
+      uz: `
+        <p>Kompaniya «GARANT DOMOFON» aholi uchun domofon tizimlarini texnik xizmat ko‘rsatish bo‘yicha shartnoma tuzishni taklif qiladi.</p>
+        <h2>TEXNIK XIZMAT KO‘RSATISH SHARTLARI</h2>
+        <ul>
+          <li>Domofon tizimlariga to‘liq texnik xizmat ko‘rsatish.</li>
+          <li>Eshik dоvodchiklarini ta’mirlash va xizmat ko‘rsatish.</li>
+          <li>Elektromagnit qulfga xizmat ko‘rsatish.</li>
+          <li>Suhbat qurilmalari (trubkalar)ni bepul ta’mirlash.</li>
+          <li>Ta’mir vaqtida foydalanish uchun vaqtinchalik trubka beriladi.</li>
+          <li>Trubkani bepul almashtirish.</li>
+        </ul>
+      `,
+      ru: `
+        <p>Компания «ГАРАНТ ДОМОФОН» предлагает жителям подъезда заключить договор на обслуживание домофонных систем.</p>
+        <h2>УСЛОВИЯ ТЕХНИЧЕСКОГО ОБСЛУЖИВАНИЯ</h2>
+        <ul>
+          <li>Полное техническое обслуживание домофонных систем.</li>
+          <li>Обслуживание и ремонт дверных доводчиков.</li>
+          <li>Обслуживание электромагнитного замка.</li>
+          <li>Бесплатный ремонт переговорных устройств (трубок).</li>
+          <li>На время ремонта предоставляем рабочую трубку для комфортного пользования домофоном.</li>
+          <li>Бесплатная замена трубки.</li>
+        </ul>
+      `
+    };
+    function setLang(lang) {
+      content.innerHTML = texts[lang];
     }
   </script>
 </body>
